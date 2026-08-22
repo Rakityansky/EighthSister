@@ -1,0 +1,38 @@
+$paths = @(
+  "assets\people\alexander_vlasov\originals\1920s_vlasov_mosru_1920_ccby4.jpg",
+  "assets\people\alexander_vlasov\originals\1947_vlasov_signature_pd.png",
+  "assets\people\alexander_vlasov\originals\1940_vlasov_arhitektura_sssr_pd.jpg",
+  "assets\people\alexander_vlasov\originals\1947_vlasov_ogoniok_pd.jpg",
+  "assets\people\alexander_vlasov\originals\1935_vlasov_arhitektura_sssr_pd.jpg",
+  "assets\people\alexander_vlasov\originals\1937_vlasov_paris_pavilion_mosru_ccby4.jpg",
+  "assets\people\dmitry_chechulin\originals\1940_chechulin_arhitektura_sssr_pd.jpg",
+  "assets\people\dmitry_chechulin\originals\1935_chechulin_stroitelstvo_moskvy_pd.jpg",
+  "assets\people\dmitry_chechulin\originals\1949_chechulin_gorhozmoskvy_pd.jpg",
+  "assets\people\dmitry_chechulin\originals\1939_chechulin_stroitelnaya_gazeta_pd.jpg",
+  "assets\people\dmitry_chechulin\originals\1941_chechulin_ogoniok_pd.png",
+  "assets\people\dmitry_chechulin\originals\1946_chechulin_vechernyaya_moskva_pd.jpg",
+  "assets\people\dmitry_chechulin\originals\1948_chechulin_signature_pd.png",
+  "assets\people\dmitry_chechulin\originals\1946_chechulin_sovetskoe_iskusstvo_pd.jpg",
+  "assets\people\boris_iofan\originals\1939_iofan_arhitektura_sssr_pd.jpg",
+  "assets\people\boris_iofan\originals\1990_iofan_postal_cover_pd.jpg",
+  "assets\people\boris_iofan\originals\1933_iofan_at_work_pd.jpg",
+  "assets\people\boris_iofan\originals\1939_iofan_stroitelnaya_gazeta_pd.jpg",
+  "assets\people\vyacheslav_oltarzhevsky\originals\circa_1901_1905_oltarzhevsky_pd.jpg",
+  "assets\kyiv\hotel_moscow_ukraine\originals\2012_hotel_ukraine_kyiv_kozlenko_pd.jpg",
+  "assets\kyiv\hotel_moscow_ukraine\originals\1975_hotel_ukraine_construction_hammond_ccbysa4.jpg",
+  "assets\kyiv\hotel_moscow_ukraine\originals\2008_hotel_ukraine_kyiv_levchuk_ccby3.jpg",
+  "assets\moscow\palace_of_soviets\originals\1937_palace_of_soviets_msheet_pd.jpg",
+  "assets\moscow\palace_of_soviets\originals\1940_palace_of_soviets_frame_pd.jpg",
+  "assets\moscow\palace_of_soviets\originals\1941_palace_of_soviets_postcard_pd.jpg",
+  "assets\moscow\palace_of_soviets\originals\1932_schuko_palace_draft_pd.jpg",
+  "assets\moscow\palace_of_soviets\originals\undated_palace_construction_sketch_pd.jpg"
+)
+
+foreach ($p in $paths) {
+  if (Test-Path $p) {
+    $h = (Get-FileHash -Algorithm SHA256 -Path $p).Hash
+    Write-Host "$h  $p"
+  } else {
+    Write-Host "MISSING  $p"
+  }
+}
