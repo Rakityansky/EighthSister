@@ -1,0 +1,31 @@
+# OS / editor temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+
+# Browser caches (использовался только вручную; не должно попасть в архив)
+.cache/
+
+# Temporary artefacts of the collection process
+*.tmp
+*.bak
+metadata_vlasov.json
+metadata_architects_part1.json
+metadata_architects_part2.json
+metadata_priority.json
+hashes.txt.tmp
+
+# Avoid committing large standalone viewer / API outputs
+metadata_*.json
+!assets/**/metadata/*.json
+!scripts/metadata/schemas/*.json
+
+# Python / scripting helpers the team may add later
+__pycache__/
+*.pyc
+
+# Logs that may contain sensitive info / fetch errors
+logs/*errors.txt
